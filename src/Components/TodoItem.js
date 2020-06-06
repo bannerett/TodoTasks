@@ -3,6 +3,8 @@ import { Context } from '../context'
 
 export default function TodoItem({ id, title, completed }) {
   // const [checked, setChecked] = useState(props.completed)
+
+  //Added useContext to change App.js checked props
   const { /*toggleTodo, removeTodo*/ dispatch } = useContext(Context)
   const cls = ['todo-item animate__zoomIn']
 
