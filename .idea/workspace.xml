@@ -67,6 +67,7 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/TodoTasks" />
     </ignored-roots>
   </component>
 </project>
