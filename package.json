@@ -1,5 +1,5 @@
 {
-  "homepage": "http://johnv87.github.io/TodoTasks",
+  "homepage": "http://johnv87.github.io/TodoTask",
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
@@ -45,5 +45,12 @@
     "App"
   ],
   "author": "johnv87",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnv87/TodoTask.git"
+  },
+  "bugs": {
+    "url": "https://github.com/johnv87/TodoTask/issues"
+  }
 }
