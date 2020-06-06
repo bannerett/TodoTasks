@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap')
+$white: #fff
+$dark: #252934
+$primary-white: #fafafa
+$primary-white-faded: rgba(255, 255, 255, 0.2)
+$secondary-white: #f9f9fa
+$primary-black: #212529
+$primary-dark: #333
+$secondary-grey: #e7e4e4
+$menu-overlay: rgba(0, 0, 0, .97)
+$bg-primary: linear-gradient(#42a1ec, #0070c9)
+$font-color: #1d1d1f
+$font-color-faded: #86868b
+$link-color: #f5f5f7
+$welcome-background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6) /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+@mixin mobile375
+  @media screen and (min-width: 375px)
+    @content
+
+@mixin mobile425
+  @media screen and (min-width: 425px)
+    @content
+
+@mixin tablet768
+  @media screen and (min-width: 768px)
+    @content
+
+@mixin laptop-sm
+  @media screen and (min-width: 1024px)
+    @content
+
+@mixin laptop-md
+  @media screen and (min-width: 1280px)
+    @content
+
+@mixin laptop-lg
+  @media screen and (min-width: 1440px)
+    @content
+
+@mixin laptop-xl
+  @media screen and (min-width: 1920px)
+    @content
+
+*,
+::before,
+::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html,
+body
+  background-color: $white !important
+  height: 100%
+  width: 100%
+  scroll-behavior: smooth
+
+html
+  -webkit-tap-highlight-color: transparent
+  -webkit-text-size-adjust: 100%
+  font-family: sans-serif
+  line-height: 1.15
+
+body
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  background-color: $white
+  color: $font-color
+  font-family: -apple-system, 'Nunito Sans', BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif
+  font-size: 1rem
+  font-weight: 400
+  line-height: 1.5
+  margin: 0 auto
+  position: relative
+  text-align: left
+
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+.row
+  display: flex
+  flex-direction: column
+  height: fit-content
+  width: 100%
+
+.container
+  margin: 0 auto
+  max-width: 1180px
+  padding: 0 1rem
+  width: 100%
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6
+  margin-bottom: .5rem
+  margin-top: 1rem
+
+.display
+  font-size: 2.5rem
+  font-weight: 300
+
+header
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  max-height: 70px
+  height: 100%
+  width: 100%
+  background: $primary-dark
+  color: $primary-white
+  box-shadow: 0 2px 8px 2px rgba(0, 0, 0, .25)
+  z-index: 1031
+  overflow: hidden
+
+  >h1
+    margin: 0
+    padding: 0 1rem
+
+  .navbar
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 100%
+    width: 100%
+    @include laptop-sm
+      flex-direction: column
+      justify-content: flex-start
+
+    .navbar-brand
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 1.25rem
+      font-weight: 400
+      color: $primary-white
+      padding: 8px
+      text-align: center
+      text-decoration: none
+      width: fit-content
+      @include tablet768
+        width: 160px
+      @include laptop-sm
+        background: #222
+        width: 120px
+        height: 120px
+
+    .navbar-nav
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      height: 100%
+      width: 100%
+      @include laptop-sm
+        flex-direction: column
+        justify-content: flex-start
+        height: fit-content
+
+      .nav-link
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $link-color
+        font-size: .85rem
+        font-weight: 300
+        padding: 8px
+        text-decoration: none
+        text-transform: uppercase
+
+        @include laptop-sm
+          height: 60px
+          width: 100%
+
+        &.active
+          color: $white
+          background: #222
+          border-radius: 4px
+          font-weight: 400
+          box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.35)
+          @include laptop-sm
+            background: #555
+
+          &:after
+            content: ''
+            position: absolute
+            left: 5%
+            bottom: 6px
+            height: 2px
+            width: 90%
+            background: $secondary-grey
+
+
+            @include laptop-sm
+              left: 10%
+              width: 80%
+              background: $primary-dark
+
+.content
+  padding: 70px 0 16px
+  height: 200vh
+  background: $secondary-grey
+
+  @include laptop-sm
+    padding: 0 16px 16px 136px
+
+.todo-app
+  padding-top: 86px
+
+.input-field
+  padding: 0 !important
+  > input
+    background: $secondary-white !important
+  label
+    left: 1rem
+.todo-item
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background: $secondary-grey
+  margin-bottom: 8px
+  padding: 16px 16px 8px
+  border-radius: 4px
+
+  &.completed
+    span
+      text-decoration: line-through
+
+  .todo-title
+    font-size: 1.25rem
+    label
+      > input[type='checkbox']
+        margin-right: 8px
+      span.todo-text
+        color: $primary-dark !important
+        font-size: 1.125rem
+  .button
+    border: none
+    cursor: pointer
+    outline: none
+    >i.fa-trash
+      font-size: 1.25rem
+      color: red
