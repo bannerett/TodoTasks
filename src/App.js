@@ -11,9 +11,6 @@ export default function App() {
   const [todoTitle, setTodoTitle] = useState('')
   // const [todos, setTodos] = useState([])
 
-  const clickHandler = event => {
-    console.log(event.clientX)
-  }
   //Get data from localStorage
   /*  useEffect(() => {
     //If localStorage is empty set data to []
